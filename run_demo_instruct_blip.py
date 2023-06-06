@@ -2,12 +2,6 @@ import gradio as gr
 import sys
 import torch
 import argparse
-
-sys.path.append('lavis')
-
-
-print(sys.path)
-
 from lavis.models import load_model_and_preprocess
 
 
