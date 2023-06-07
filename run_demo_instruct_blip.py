@@ -114,9 +114,18 @@ if __name__ == '__main__':
 
         return output[0]
 
+    '''
     gr.Interface(
         fn=inference,
         inputs=[image_input, prompt_textbox, min_len, max_len, beam_size, len_penalty, repetition_penalty, top_p, sampling],
         outputs="text",
         allow_flagging="never",
     ).launch(share=True)
+    '''
+
+    gr.Interface(
+        fn=inference,
+        inputs=[image_input, prompt_textbox, min_len, max_len, beam_size, len_penalty, repetition_penalty, top_p, sampling],
+        outputs="text",
+        allow_flagging="never",
+    ).queue().launch(share=True)
